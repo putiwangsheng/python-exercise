@@ -3,15 +3,15 @@ from os.path import exists
 # TODO with：
 
 script, filename, filename2 = argv
+
 # 将test的内容复制到test2
-file1 = open(filename)
-content = file1.read()
-
-# 判断文件是否存在
-print(exists(filename2))
-
-file2 = open(filename2, 'w')
-file2.write(content)
-
-file1.close()
-file2.close()
+try:
+    # 使用with无需关闭文件，也无需使用finally语句
+    with open(filename, 'r') as f:
+        # 判断文件是否存在
+        print(exists(filename2))
+        with open(filename2, 'w') as f1:
+            # 将filename的内容写入filename2
+            f1.write(f.read())
+except:
+    print("error")
