@@ -23,6 +23,7 @@ def secret_formula(started):
     return jelly_beans, jars, crates
 
 start_point = 10000
+# 这里secret_formula(start_point)返回的是一个元组，打印出三个变量的值需要先解包
 beans, jars, crates = secret_formula(start_point)
 
 print("With a staring point of：{}".format(start_point))
@@ -30,4 +31,5 @@ print("We'd have {} beans, {} jars, {} crates".format(beans, jars, crates))
 
 start_point = start_point / 10
 print("We can also do that this way")
-print("We'd have {} beans, {} jars, {} crates".format(secret_formula(start_point)))
+beans, jars, crates = secret_formula(start_point)
+print("We'd have {} beans, {} jars, {} crates".format(beans, jars, crates))
