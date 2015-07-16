@@ -6,6 +6,10 @@ change = [1, 'fish', 2, 'cat', 3, 'dog']
 for number in the_count:
     print("This is count {}".format(number))
 
+# 运用enumerate()
+for index, number in enumerate(the_count):
+    print("index: {}, number: {}".format(index, number))
+
 for animal in animals:
     print("animal:{}".format(animal))
 
