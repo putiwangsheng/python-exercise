@@ -14,9 +14,19 @@ class Song(object):
 birthday = ["Happy brithday to you", "I don't want to get sued"]
 happy_bday = Song(birthday)
 print(Song(birthday))
+
 parade = ["They rally round the family"]
 bulls_on_parade = Song(parade)
 print(Song(Song(parade)))
 
 happy_bday.sing_me_a_song()
 bulls_on_parade.sing_me_a_song()
+
+
+class Sing:
+    # 使用静态方法，方法不需要self参数，可以通过类直接调用
+    @staticmethod
+    def sing_song():
+        print("use staticmethod")
+
+Sing.sing_song()
