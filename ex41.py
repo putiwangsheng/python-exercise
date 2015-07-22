@@ -67,14 +67,12 @@ try:
 
         for snippet in snippets:
             phrase = PHRASES[snippet]
-            question, answer = convert(snippet, phrase)
-            answer = convert(snippet, phrase)
-            if PHRASE_FIRST:
-                question, answer = answer, question
-
+            question = convert(snippet, phrase)
             print(question)
+            if PHRASE_FIRST:
+                print("answer")
 
             input("> ")
-            print("answer:{}\n\n".format(answer))
+            print("answer")
 except EOFError:
     print("\nBye")
